@@ -1,0 +1,947 @@
+
+@import "nullStyles.scss";
+@import "fonts.scss";
+
+@mixin sizeHeight($size: 12px, $height: 16px) {
+  font-size: $size;
+  line-height: $height;
+}
+
+body{
+   font-family: 'Formular';
+   font-size: 14px;
+   line-height: 1;
+   color: #111827;
+   background: #E5E7EB;
+   font-weight: 400;
+}
+h1, h2, h3, h4, h5, h6 {
+   font-family: 'Formular';
+   font-weight: 900;
+}
+header:after, .container:after, footer:after, .widget-posts-list li:after, #subscribe:after {
+   content: "";
+   display: table;
+   clear: both;
+}
+.container {
+   margin: 0 auto;
+   width: 100%;
+   max-width: 1536px;
+}
+
+/*Стили для шапки и её содержимого*/
+header {
+   width: 100%;
+   background-color: #F9FAFB;
+   position: relative;
+   padding: 24px 0px;
+}
+
+.first-header-row{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   h2{
+      font-size: 24px;      
+      line-height: 32px;
+   }
+   margin-bottom: 24px;
+}
+.logo-block{
+   display: inline-flex;
+   gap: 4px;
+   align-items: center;
+}
+.logo-text{  
+   color: black;   
+}
+
+.prices-info{
+   
+   border-right: 1px solid #A78BFA;
+   padding-right: 12px;
+   font-size: 16px;
+   line-height: 24px;
+}
+.prices-info.prices-info-moved{
+   display: flex;
+   justify-content: center;
+   gap: 8px;
+   align-items: center;
+   float: none;
+   border: none;
+   padding-right: 0px;
+   p{
+      text-align: center;
+   }
+   p:nth-child(1) {
+      min-width: 232.5px;
+   }
+   p:nth-child(2) {
+      min-width: 232.5px;
+   }
+   p:nth-child(3) {
+      min-width: 223px;
+   }
+}
+
+
+.main-header-info{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.contact-info{
+   margin-left: 12px;
+   
+   
+   h1{
+      font-size: 36px;
+      line-height: 40px;
+   }
+   p{
+      font-weight: 300;
+      font-size: 24px;
+      line-height: 32px;
+   }
+}
+
+.logo img{
+   max-width: 50px;
+   max-height: 74px;
+}
+
+.second-header-row .menu-block{
+   display: flex;
+   justify-content: space-between;
+   font-size: 16px;
+   font-weight: bold;
+   line-height: 24px;
+   align-items: center;
+   #menu li {
+      display: inline-block;
+      margin-right: 24px;
+   }
+   #menu a {
+      color: #111;      
+      display: block;      
+   }
+   #menu a:hover {
+      color: #8B5CF6;
+   }
+   #menu a:active{
+      border-bottom: 2px dashed #8B5CF6;
+   }
+   #menu li:last-child {
+      margin-right: 0;
+   }
+   .leave-request{
+      color: #F9FAFB;
+      background: #8B5CF6;
+      height: 44px;
+      width: 196px;
+      border-radius: 4px;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 24px;
+   }
+}
+
+.nav-toggle {  
+   display: none;   
+   position: relative;
+   width: 24px;
+   height: 16px;
+   margin-left: 16px;
+   cursor: pointer;
+}
+.nav-toggle span {
+   display: block;
+   position: absolute;
+   top: 6px;
+   height: 4px;
+   background: #A78BFA;
+   width: 100%;
+   border-radius: 4px;
+}
+.nav-toggle:before, .nav-toggle:after {
+   content: "";
+   position: absolute;
+   display: block;
+   left: 0;
+   width: 100%;
+   height: 4px;
+   background: #A78BFA;
+   border-radius: 4px;
+}
+.nav-toggle:before {
+   top: 0px;
+}
+.nav-toggle:after {
+   bottom: 0px;
+}
+
+header.active{
+   .nav-toggle {       
+      height: 20px;      
+   }
+   .nav-toggle span {
+      transform: scale(0);
+   }
+   .nav-toggle:before {
+      top: 8px;
+      transform: rotate(45deg);      
+   }
+   .nav-toggle:after {
+      bottom: 8px;
+      transform: rotate(-45deg);      
+   }
+}
+/*Стили для шапки и её содержимого*/
+
+/*Стили для контентной части и её содержимого*/
+.wrapper section{
+   margin-top: 72px;
+}
+section {
+  transition: all 1s ease-in 0s;
+  opacity: 0;
+}
+section.start-anim {
+  transition: all 1s ease-in 0s;
+  opacity: 1;
+  visibility: visible;
+}
+
+.wrapper {
+   .calculator{
+      margin-top: 40px;
+   }
+}
+
+.calculator-outer-block{
+   display: flex;
+   gap: 24px;
+
+   > div{
+      flex: 0 1 50%;
+   }
+
+   .order-to-russia-block{      
+
+      .order-to-russia-text{
+         h2{
+            @include sizeHeight(36px, 40px);
+            margin-bottom: 12px
+         }
+         p{
+            @include sizeHeight(20px, 28px);
+         }
+         margin-bottom: 16px;
+      }      
+   }
+
+   .calculator-block{
+      background: #F9FAFB;
+      border-radius: 16px;
+      padding: 24px 0px;
+      .calculator-container{
+         max-width: 496px;
+         margin: 0px auto;
+         .text-container{
+            max-width: 358px;
+            margin: 0px auto;
+         }
+         h3{
+            margin-bottom: 16px;
+            @include sizeHeight(30px, 36px);
+            font-weight: bold;
+            text-align: center;            
+         }
+         p{
+            @include sizeHeight(16px, 24px);
+            text-align: center;            
+         }
+         .delivery-calculator{
+            margin-top: 28px;
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+            > input{
+               flex: 1 0 47%; 
+               height: 48px;
+               padding: 12px;
+               border: 2px solid #111827;
+               border-radius: 4px;
+            }
+            > input::placeholder {
+               @include sizeHeight(16px, 24px);
+               color: #9CA3AF;
+            }
+            input:first-child{
+               flex: 1 0 100%;
+            }
+            input:last-child{
+               flex: 1 0 100%;
+               background: #8B5CF6;
+               @include sizeHeight(16px, 24px);
+               font-weight: bold;
+               color: #F9FAFB;
+               height: 44px;
+               margin-top: 4px;
+               border:none
+            }
+         }
+      }
+   }
+}
+/*Стили для контентной части и её содержимого*/
+
+/* our-advantages (start) */
+.advantage-item-img{
+   max-width: 136px;
+   max-height: 136px;
+}
+
+.our-advantages{
+   h2{
+      text-align: center;
+      margin-bottom: 24px;
+      @include sizeHeight(30px, 36px);
+   }
+
+   .advantages-container{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      .advantage-item{
+         flex: 1 0 496px;
+         display: inline-flex;
+         padding: 24px;
+         justify-content: center;
+         align-items: center;
+         gap: 12px;
+
+         h3{
+            @include sizeHeight(24px, 32px);
+            margin-bottom: 12px
+         }
+
+         p{
+            @include sizeHeight(14px, 20px);
+            font-weight: 400;
+         }
+      }
+   }
+}
+/* our-advantages (end) */
+
+/* quality-guarantees (start) */
+
+.quality-guarantees{
+   h2{
+      text-align: center;
+      margin-bottom: 12px;
+      @include sizeHeight(30px, 36px);
+   }
+   .header-text{
+      @include sizeHeight(16px, 24px);
+      font-weight: 400;
+      text-align: center;
+      max-width: 756px;
+      margin: 0 auto;
+      margin-bottom: 24px;
+   }
+
+   .quality-guarantees-container{
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      .quality-guarantees-item{
+         flex: 0 0 366px;
+         h5{
+            text-align: center;
+            margin-top: 4px;
+            @include sizeHeight(18px, 28px);
+         }         
+      }
+   }
+   .show-more{
+      @include sizeHeight(16px, 24px);
+      font-weight: 900;
+      padding: 16px 28px;
+      border-radius: 12px;
+      background-color: #8B5CF6;
+      color: #F9FAFB;
+      display: block;
+      margin: 0 auto;
+      margin-top: 36px;
+   }
+}
+
+/* quality-guarantees (end) */
+
+/* reviews (start) */
+
+.reviews{
+   h2{
+      @include sizeHeight(30px, 36px);
+      text-align: center;
+      margin-bottom: 32px;
+   }
+   .container{
+     
+   }
+   .slider{
+      position: relative;
+      
+      .slick-list{
+         overflow: hidden;
+         max-width: 1300px;
+         margin: 0 auto;
+      }
+      .slick-track{
+      }
+      .slider-item{
+         float: left;
+         padding: 32px 16px;
+         margin: 0 12px;
+         border-radius: 16px;
+         background: url('../img/Quotes2.png') bottom 16px right 16px / 75px 75px no-repeat;
+         background-color: #F9FAFB;
+         p{
+            @include sizeHeight(24px, 32px);
+            margin: 0 auto;
+            max-width: 540px;
+         }
+         .content{            
+            font-weight: 700;
+         }
+         .author{
+            font-weight: 300;
+            color: #6B7280;
+            margin-top: 30px;
+         }
+      }
+      .slick-arrow{
+         position: absolute;
+         top: 50%;
+         z-index: 10;
+         font-size: 0;
+         width: 60px;
+         height: 60px;
+         margin-top: -30px;         
+      }
+      .slick-arrow.slick-disabled{
+         opacity: 0.33;
+      }
+      .slick-prev{
+         left: 23px;
+         background: url('../img/Vector-left.png') 0 0 / 100% no-repeat;
+      }
+      .slick-next{
+         right: 23px;
+         background: url('../img/Vector-right.png') 0 0 / 100% no-repeat;
+      }
+   }
+}
+
+/* reviews (end) */
+
+/* questions (start) */
+
+.questions-block{
+   background: #F9FAFB;
+   border-radius: 16px;
+   padding: 64px 0px;
+   h2{
+      @include sizeHeight(30px, 36px);
+      margin-bottom: 32px;
+      text-align: center;
+   }
+   .questions-form{
+      
+      margin: 0 auto;
+      max-width: 498px;
+
+      > input{
+         background: #8B5CF6;
+         @include sizeHeight(16px, 24px);
+         font-weight: bold;
+         color: #F9FAFB;
+         width: 100%;
+         padding: 10px 28px;
+         margin-top: 20px;
+         border:none           
+      }
+      .fields{
+         display: flex;
+         flex-wrap: wrap;
+         gap: 24px;
+         
+         input, textarea{            
+            padding: 12px;
+            border: 2px solid #111827;
+            border-radius: 4px;
+         }
+
+         input{
+            flex: 0 0 237px; 
+            height: 48px;            
+         }
+
+         input::placeholder, textarea::placeholder {
+            @include sizeHeight(16px, 24px);
+            color: #9CA3AF;
+         }
+         
+         textarea{
+            flex: 1 0 100%;
+            height: 150px;
+            resize: none;
+         }
+      }
+      
+   }
+}
+
+/* questions (end) */
+
+/* footer (start) */
+
+footer {
+   margin-top: 72px;
+   background-color: #111827;
+   padding: 40px 0;
+   .container{
+      
+      *{
+         color: #F9FAFB;
+      }      
+   }
+   .footer-nav-block{
+      #menu li {
+         display: inline-block;
+         margin-right: 24px;
+      }
+      #menu li:last-child {
+         margin-right: 0px;
+      }
+      a{
+         @include sizeHeight(16px, 24px);
+         font-weight: 700;
+      }
+   }
+   .footer-nav-block.footer-nav-block-moved{     
+      display: flex;
+      justify-content: center; 
+      margin: 0px auto;
+      margin-bottom: 24px;
+   }
+   .first-footer-row{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      .footer-logo-block{
+         .logo-text{
+            @include sizeHeight(24px, 32px);
+         }
+         .logo-block-text{
+            margin-top: 8px;
+            @include sizeHeight(12px, 16px);
+            font-weight: 300;
+            background: url(../img/Quotes.png) right no-repeat;
+            padding: 0 20px 0 0;
+         }
+         
+      }      
+      .footer-contact-info-block{
+         h1{
+            @include sizeHeight(36px, 40px);
+         }
+         p{
+            font-weight: 400;
+            @include sizeHeight(24px, 32px);
+         }
+      }
+   }
+   .second-footer-row{
+      display: flex;
+      justify-content: space-between;
+      *{
+         color: #4B5563;
+      }
+      @include sizeHeight(12px, 16px);
+      font-weight: 300;
+      p:first-child{
+         max-width: 1146px;
+         text-align: start;
+      }
+      p:last-child{
+         max-width: 242px;
+         text-align: end;
+      }
+   }
+}
+/* footer (end) */
+@media (max-width: 1536px) {
+   .container {
+      max-width: 1026px;
+   }
+   .wrapper section{
+      margin-top: 48px;
+   }
+   .contact-info{
+      h1{
+         font-size: 30px;
+         line-height: 36px;
+      }
+      p{
+         font-size: 20px;
+         line-height: 28px;
+      }
+   }
+   .calculator-outer-block{
+      flex-direction: column;
+      gap: 40px;
+
+      > div{
+         
+      }
+   }
+   .calculator-outer-block{
+      .order-to-russia-block{ 
+         display: flex;
+         gap: 16px;
+
+         > div{
+            flex: 1 1 50%;
+         }
+
+         img{
+            flex: 1 1 50%;
+            max-width: 505px;
+            max-height: 232px;
+         }
+         .order-to-russia-text{
+            h2{                      
+               font-size: 30px;
+               line-height: 36px;
+            }
+            
+            margin-bottom: 0px;
+         } 
+      }
+      .calculator-block{
+         .calculator-container{
+            max-width: 606px;
+
+            .delivery-calculator{
+               > input{
+                  flex: 1 0 48%;            
+               }
+               input:first-child{
+                  flex: 1 0 100%;
+               }
+               input:last-child{
+                  flex: 1 0 100%;
+               }
+            }
+         }
+      }
+      
+   }
+
+   .quality-guarantees{
+      .quality-guarantees-container{         
+         .quality-guarantees-item{
+            flex: 0 0 396px;
+            img{
+               max-height: 375px;
+            }
+         }
+      }
+   }
+
+   .reviews{      
+      .slider{
+         .slick-list{
+            max-width: 840px;
+         }
+         .slider-item{
+            padding: 16px 16px;
+            p{
+               max-width: 364px;
+            }
+            .content{       
+               @include sizeHeight(18px, 28px);
+            }
+            .author{
+               @include sizeHeight(16px, 24px);
+               margin-top: 24px;
+            }
+         }         
+         .slick-prev{
+            left: 10px;
+         }
+         .slick-next{
+            right: 10px;
+         }
+      }
+   }
+
+   footer {
+      .container {
+         max-width: 1152px;
+      }
+      .first-footer-row{
+         .footer-contact-info-block{
+            h1{
+               @include sizeHeight(30px, 36px);
+            }
+            p{
+               @include sizeHeight(20px, 28px);
+            }
+         }
+      }
+      .second-footer-row{
+         p:first-child{
+            max-width: 910px;
+         }
+         p:last-child{
+            max-width: 242px;
+         }
+      }
+   
+   }
+}
+@media (max-width: 1024px) {
+   .container {
+      max-width: 768px;
+   }
+
+   .contact-info{
+      h1{
+         font-size: 24px;
+         line-height: 32px;
+      }
+      p{
+         font-size: 16px;
+         line-height: 24px;
+      }
+   }
+   .prices-info{
+      font-size: 14px;
+      line-height: 20px;
+   } 
+   
+   .first-header-row{
+      margin-bottom: 0px;
+   }
+   .menu-block{
+      margin: 12px 0px;
+      padding: 12px 0px;
+      border-top: 2px solid #A78BFA;
+      border-bottom: 2px solid #A78BFA;
+   }  
+
+   .calculator-outer-block{
+      .order-to-russia-block{ 
+         flex-direction: column;
+
+         > div{
+            flex: 1 1 100%;
+         }
+
+         img{
+            flex: 1 1 100%;
+            max-width: 100%;
+            max-height: 350px;
+         }
+      }
+   }
+
+   .advantage-item-img{
+      max-width: 108.8px;
+      max-height: 108.8px;
+   }
+
+   .our-advantages{
+      .advantages-container{
+         .advantage-item{
+            padding: 0px;
+            flex: 1 0 372px;
+            h3{
+               @include sizeHeight(20px, 28px);
+            }
+         }
+      }
+   }
+
+   .quality-guarantees{
+      .quality-guarantees-container{         
+         .quality-guarantees-item{
+            flex: 0 0 366px;            
+         }
+      }
+   }
+
+   .reviews{      
+      .slider{
+         .slick-list{
+            max-width: 570px;
+         }
+         .slider-item{
+            padding: 32px 16px;
+            margin: 0px 0px;
+            p{
+               max-width: 540px;
+            }
+         }         
+         .slick-prev{
+            left: 7px;
+         }
+         .slick-next{
+            right: 7px;
+         }
+      }
+   }
+
+   footer {
+      .container {
+         max-width: 768px;
+      }
+      .second-footer-row{
+         flex-direction: column;
+         gap: 8px;
+         p:first-child{
+            max-width: none;         
+            text-align: center;
+         }
+         p:last-child{
+            max-width: none;
+            text-align: center;
+         }
+      }
+   }
+}
+
+@media (max-width: 758px) {
+   .container {
+      max-width: 640px;
+   }
+   .contact-info{
+      h1{
+         font-size: 20px;
+         line-height: 28px;
+      }
+      p{
+         display: none;
+      }
+   }
+   .logo-block{
+      h2{
+         font-size: 18px;
+         line-height: 28px;
+      }
+   }
+
+   .nav-toggle {
+      display: block;
+   }
+   .prices-info.prices-info-moved{
+      gap: 24px;
+
+      p:nth-child(1) {
+         min-width: 184.5px;
+      }
+      p:nth-child(2) {
+         min-width: 184.5px;
+      }
+   }
+   header.active{
+      padding-top: 24px;
+      border-left: 1px solid #000000;
+      border-right: 1px solid #000000;
+      .second-header-row{
+         max-height: 200px;
+         padding-bottom: 24px;
+         border-radius: 0 0 10px 10px;
+         border-bottom: 1px solid #000000;
+         border-left: 1px solid #000000;
+         border-right: 1px solid #000000;
+      }
+   }
+   
+   .second-header-row{      
+      max-height: 0;
+      position: absolute;
+      overflow: hidden;
+      background-color: #F9FAFB;
+      right: -1px;
+      left: -1px;
+      z-index: 3;      
+
+      .second-header-row-container{
+         margin: 0 auto;
+         width: 100%;
+         max-width: 640px;
+      }  
+   }
+   header {
+      padding: 8px 0px;
+   }
+
+   .our-advantages{
+      .advantages-container{
+         justify-content: center;
+         .advantage-item{
+            flex: 0 0 372px;
+         }
+      }
+   }
+
+   .reviews{      
+      .slider{
+         .slick-list{
+            max-width: 442px;
+         }
+         .slider-item{            
+            p{
+               max-width: 410px;
+            }
+         } 
+      }
+   }
+
+   footer {
+      .container {
+         max-width: 502px;
+      }
+      
+      .first-footer-row{
+         .footer-logo-block{
+            order: 2;
+            text-align: center;
+            .logo-block{
+               h2{
+                  @include sizeHeight(24px, 32px);
+               }         
+            }
+         }
+         .footer-contact-info-block{
+            order: 1;
+         }
+         flex-direction: column;
+         gap: 8px;
+      }
+      .second-footer-row{
+         
+         
+      }
+   }
+}
